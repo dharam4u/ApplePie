@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     
     @IBOutlet var letterButtons: [UIButton]!
-    var listOfWords = ["buccaneer", "swift", "glorious", "incandescent", "bug", "program"]
+    var listOfWords = ["Apple", "Bat", "Car", "Elephant", "Mouse", "Joker"]
+    
     let incorrectMovesAllowed = 7
     var totalWins = 0 {
         didSet {
@@ -48,7 +49,7 @@ class ViewController: UIViewController {
         
         if !listOfWords.isEmpty {
             let newWord = listOfWords.removeFirst()
-            currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, gussedLetter: [])
+            currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [])
             enableLetterButtons(true)
             updateUI()
         } else {
